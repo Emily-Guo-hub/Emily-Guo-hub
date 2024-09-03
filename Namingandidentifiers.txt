@@ -1,0 +1,161 @@
+//Page 1
+skip
+//Page 2
+// Number Of Rabbits
+6
+
+// Number Of Cats
+5
+
+// Number Of Turtles
+2
+
+//Number of hamsters
+1
+
+// Total Number Of Animals
+5+4+3
+
+// Total Number Of Mammals
+5 + 4
+//Page 3
+// Number Of Rabbits
+6
+
+// Number Of Cats
+5
+
+// Number Of Turtles
+2
+
+// Number Of Hamsters
+1
+
+// Total Number Of Animals
+6 + 5 + 2 + 1
+
+// Total Number Of Mammals
+6 + 5 + 1
+//Page 4
+let numberOfRabbits = 7
+
+let numberOfCats = 4
+
+let numberOfTurtles = 3
+
+let numberOfHamsters = 2
+let totalNumberOfAnimals = 7+4+3+2=16
+
+let totalNumberOfMammals = 7+4+2=13
+//Page 5
+skip
+//Page 6
+let numberOfRabbits = 6 + 2
+
+let numberOfCats = 5 - 1
+
+let numberOfTurtles = 2 + 1
+
+let numberOfHamsters = 1 + 1
+
+let numberOfPig = 1
+
+let numberOfFish = 1
+
+let numberOfSnake= 1
+
+let totalNumberOfAnimals = numberOfRabbits + numberOfCats + numberOfTurtles + numberOfHamsters+ numberOfSnake +
+numberOfFish + numberOfPig 
+let totalNumberOfMammals = numberOfRabbits + numberOfCats + numberOfHamsters +numberOfPig
+//Page 7
+let 🐰 = 8
+let 🐱 = 4
+let 🐹 = 2
+let 🐢 = 3
+let 🐍 = 1
+let 🐴 = 1
+let 🐟 = 1
+
+let totalNumberOfAnimals = 🐰 + 🐱 + 🐹 + 🐢 + 🐍 + 🐴 + 🐟
+
+let totalNumberOfMammals = 🐰 + 🐱 + 🐹 + 🐴
+//Page 8
+let numberOfRabbits = 101
+//Page 9
+skip
+//Page 10
+// Number Of Tickets
+150
+
+// Ticket Price
+10
+
+// Room Rental Fee
+1000
+
+// Poster Cost
+40
+
+// Total Ticket Value
+150 * 10
+
+// Total Expenses
+1000 + 40
+
+// Total Income Of Show
+(150 * 10) - (1000 + 40)
+let numberOfTickets = 150
+let Ticketsprice=10
+let RoomRentalFee= 1000
+let PosterCost= 40
+let TotalTicketValue= 1500
+let TotalExpenses= 1040
+let TotalIncomeOfShow= 460
+
+//Page 11
+let ticketsSold = 1100
+let ticketPrice = 7
+let printingCosts = 25
+let advertising = 55
+// Total takings
+let totalTakings = ticketPrice * ticketsSold
+
+// Jackpot
+let jackpot = totalTakings / 2
+
+// Expenses
+let totalExpenses = printingCosts + advertising
+
+// Profit
+let profit = totalTakings - jackpot - totalExpenses
+
+// Distribution
+let programmersCut = profit / 10 // This is the answer you want to get > 100! 👉 
+let friendsCut = profit - programmersCut
+//Page 12
+Total of rest= 1024*(8-3)= 5120/150=34
+Total of videos= 34
+//Page 13
+let brushTeeth = 5
+let uploadPhotos = 5
+let chooseClothes = 5
+let shower = 5
+let goJogging = 10
+let finishHomework = 50
+let fixLunch = 10
+let Totalnumberofstuffs = 90
+let first group: chooseClothes, shower, goJogging, finishHomework, fixLunch.
+constent number= 16
+let second group: bushTeeth, uploadPhotos= 5
+constent number= 15
+//Page 14
+let O\rangeCount = 14
+let WatermelonCount = 3
+let OrangeWeigh = 100
+let WatermelonWeigh = 200
+let total = OrangeCount * OrangeWeigh = 1400
+let totalwatermelon = WatermelonWeigh * WatermelonWeigh = 600
+let totalload = total + totalweigh = 2000
+let es = totalload / 2 = 1000
+let LeftHandsSideOrange = e / OrangeWeigh =100000
+let RightHandsSideOrange  = OrangeCount - LeftHandsSideOrange = -99986
