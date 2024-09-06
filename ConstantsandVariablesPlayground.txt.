@@ -1,0 +1,581 @@
+Naming Things Revisited
+
+In an earlier lesson, you explored the importance of naming things in real life and in programming.
+
+You’ve learned how to define a name in code and to associate a value with it by declaring a constant:
+
+let city = "Paris"
+
+You may be starting to see a pattern. A large part of programming is making up things, giving them names, and then calling those things by name to use them.
+
+So far, you’ve used constants whenever you’ve needed to assign a value to a name. But there’s still an important unanswered question: Why are they called constants?
+
+You may have already guessed that the name “constant” has something to do with staying the same — remaining constant — over time. As soon as you assign the value of a constant, you can be sure the value will remain the same.
+
+There's a second way to associate a value with a name in Swift. These values are called variables. With a variable, you can update the value over time as your program runs. The value associated with the name can change, or vary, over time.
+
+In this playground, you'll learn more about the differences between variables and constants, how to declare variables, and how to decide whether to use a variable instead of a constant.
+
+How does this all work and why is it important?
+
+Move on to the next page to learn more.
+
+page 1 of 13  |  Next: Constant and Variable
+
+Constant and Variable
+
+In programming, there's an important difference between names that always refer to the same value and names where the value can change over time.
+
+The same is true when naming things in the real world, but people don’t always notice it.
+
+Constant
+
+For example, think about “your birthdate.” Your birthdate will never change. No matter how young you are or how old you get, that date remains the same. Even hundreds of years from now, when people read about how you changed the world with your magnificent apps, your birthdate will remain the same.
+
+Your birthdate is a constant. The value is set once when you are born and never changes after that. In code, you would make birthdate a constant.
+
+Variable
+
+Many of the names people use every day can have different values over time.
+
+For example, think about “your favorite shirt” or another article of clothing. When you were two years old, your favorite shirt may have had a dinosaur or a unicorn on it. As you got older, you outgrew that shirt, both in size and in style, and now a different shirt is your favorite. In the future, you’ll probably have many different favorite shirts. You still have that name or idea of a “favorite shirt” — but the actual shirt you're referring to keeps changing over time.
+
+In code, you'd say that favoriteShirt is a variable.
+
+A Little of Both
+
+You can see a little bit of both ideas of constants and variables in most kinds of team sports. There's the notion of the “home team” and “visitors.” At your school, the home team is always the same. For your school, it's constant. The name or concept of the “visitors” stays the same, but the actual team changes every game. The visiting team is variable.
+
+Think about things in life that are constants and things that are variables. Use the list below as a starting point:
+
+Where you were born
+Where you live
+How old you are
+Your favorite movie
+How many inches are in a foot
+Who was the first President of the United States
+
+Previous  |  page 2 of 13  |  Next: Declaring Variables
+
+Where you were born: This is a constant because your birthplace will never change.
+Where you live: This is a variable because you might move and live in different places.
+Your favorite movie: This is a variable because your preferences may change over time.
+How many inches are in a foot: This is a constant because one foot always equals 12 inches, and that won’t change.
+Who was the first President of the United States: This is a constant because the first President of the United States will always be George Washington.
+
+Declaring Variables
+
+Declaring a variable is almost exactly like declaring a constant. But instead of using the keyword let, you use the keyword var:
+
+// Declaring a constant
+let placeOfBirth = "New Jersey"
+
+// Declaring a variable
+var currentLocation = "New Jersey"
+
+Once you've declared a variable, you can assign a new value to it:
+
+// Assigning a new value to a variable
+currentLocation = "California"
+
+Below, add a line of code that assigns a new value to currentLocation:
+
+// Assign a new value
+
+// Declaring a constant
+let placeOfBirth = "New Jersey"
+
+// Declaring a variable
+var currentLocation = "New Jersey"
+
+// Assigning a new value to currentLocation
+currentLocation = "California"
+
+In most ways, constants and variables are the same:
+
+Both use the same rules for names
+Both associate a name with an assigned value
+Both have a specific type
+
+The difference is:
+
+The value of a constant cannot be changed after it's first assigned
+The value of a variable can be changed after it's first assigned
+
+Next, learn how to work with variables.
+
+Previous  |  page 3 of 13  |  Next: Working with Variables
+
+Working with Variables
+
+Now that you know how to declare variables, how and when do you use them?
+
+You use variables in places where a value in your program needs to change over time. An example would be the score of a game. As the player scores more points, your code would update the value of a variable keeping track of the score.
+
+For example this variable will be assigned an initial value of zero:
+
+var score = 0
+
+If the player scores ten points, you can update the score:
+
+score = 10
+
+Now the player scores another five points, so you can update the score again:
+
+score = 15
+
+This is nice, but it would be nicer to use the existing value of score when calculating the new value. To add another five points, you can do this:
+
+score = score + 5
+
+It might seem strangely circular to set a value to equal itself plus something else, as if you're both setting a value and changing it in a single step, but that isn't exactly what's happening. Even though it’s a single line of code, Swift evaluates the statement in two different steps.
+
+The right side of the assignment is calculated first, as if it were written on its own in a playground. However, just doing a calculation with a variable doesn't change its value:
+
+score + 5
+score
+score + 3
+score
+
+But when a calculation is on the right side of an assignment, the variable stores the calculation's result and takes on a brand new value:
+
+score = score + 5
+score = score + 3
+
+What do you think the value of score would be after these lines? Try it and find out!
+
+ score = 5
+ score = score + score
+
+
+Next, learn a shortcut for score = score + 5.
+
+Previous  |  page 4 of 13  |  Next: A Shortcut
+
+// Initial score set to 5
+var score = 5
+
+// Calculate the score and assign the result back to score
+score = score + score // Result: 10
+
+A Shortcut
+
+You saw how to use the current value of a variable as part of updating to a new value:
+
+// Value is initially zero
+var score = 0
+
+// Take the current value of `score`, add 2, assign the result to `score` as its new value
+score = score + 2
+
+This type of operation happens often enough that Swift has a special operator +=. This shorthand merges addition (+) and assignment (=) into one combined operation.
+
+The following line of code:
+
+score = score + 2
+
+has the same effect as:
+
+score += 2
+
+Replace the line of code score = score + 2 above using += instead. Note that the result in the results bar is the same. To add more points to the game score, add a few more lines of code using the += operator.
+
+Compound Assignment
+
+The formal name for this kind of operator is a compound assignment operator. The += operator not only works for numbers, but anywhere you can use the addition operator +.
+
+For example, you can use the += operator with strings:
+
+var greeting = ""
+greeting += "Hello"
+greeting += " "
+greeting += "World"
+
+Try building up the statement “Compound assignment is useful” using compound assignment and the following constants. The first part of the statement is done for you:
+
+
+//:  - Experiment: Try building up the statement “Compound assignment is useful” using compound assignment and the following constants. The first part of the statement is done for you:
+let word1 = "Compound"
+let word2 = "assignment"
+let word3 = "is"
+let word4 = "useful"
+let space = " "
+
+var statement = ""
+statement += word1
+
+Compound assignment works with all the mathematical operators, even the remainder operator. Use the *= operator to create the powers of two up to two to the 10th:
+
+var powerOfTwo = 1
+
+Previous  |  page 5 of 13  |  Next: Confusing Changes
+
+// Initial score is 0
+var score = 0
+
+// Use the += operator to update the score, adding 2
+score += 2
+
+// Use the += operator again to increase the score, for example, add 5
+score += 5
+
+// Print the current score
+print(score) // The output should be 7
+
+Confusing Changes
+
+When something changes in your life, you can experience some degree of confusion.
+
+Imagine you're meeting a group of six friends at the movies at 8 p.m.
+
+You receive a message that the plan has changed. You're now seeing a different movie at a different theater and will be meeting at 9 p.m.
+
+A little later you receive another message that the plan has changed again. Now you're just going to hang out at your friend’s house and watch a movie there. The time is changed to 6 p.m, and you’ll order pizza.
+
+Then you receive another message that you’re going to be at your other friend’s house, but at 6:30 p.m.
+
+With all these changes, how likely is it that everyone is going to end up at the right place at the right time?
+
+Would mistakes be less likely if the plan hadn't changed?
+
+Anytime you make a change, there’s a chance that someone who relies on the information will end up using the old information and making a mistake.
+
+The same is true in programming. If you can make something a constant, you guarantee the value will never change. There's no chance another part of your program can get out of sync or use an old value.
+
+But sometimes you do need to use variables. As a program runs, things change. In programming, something that's able to change is called mutable, based on the word mutate, which just means “to change.”
+
+Something that's unable to be changed is called immutable. If something doesn't need to change, it's a good practice to use a constant. You'll reduce the chance of confusion and errors.
+
+Speaking of errors, move on to learn about a common error when working with constants and variables.
+
+Previous  |  page 6 of 13  |  Next: Trying to Change a Constant
+
+Trying to Change a Constant
+
+What happens if you try to assign a new value to a constant?
+
+As you can see below, Swift returns an error. The error is “Cannot assign to value: 'name' is a 'let' constant.” Now that you know more about what let and constant mean, this error makes sense.
+
+let name = "Johnny"
+name = "John"
+
+The error indicator looks a little different than normal. Can you spot it?
+
+This is the normal error indicator: 
+
+But the indicator above is a red circle with a white dot in it: 
+
+An error like that means Xcode has an idea how to fix the error.
+
+Fix-it
+
+For some errors, Xcode will suggest a change in the code that will fix the error for you. This feature is called Fix-it.
+
+Click the red circle with the white dot in it. There are two lines of information. The first line describes the error. The second line suggests a way to fix the error:
+
+The suggestion is to change let to var. Click the Fix button, and your code will be updated, making the error vanish.
+
+Next, see if you should always accept a Fix-it.
+
+Previous  |  page 7 of 13  |  Next: You Make the Choice
+
+var name = "Johnny"
+name = "John"
+
+You Make the Choice
+
+To a spellchecker, the sentence “My deer Uncle Joe came to visit” is a perfectly good sentence. There are no mispelled words.
+
+But your Uncle Joe probably doesn’t have four legs and antlers. You probably meant “My dear Uncle Joe…”
+
+A spell checker can give you a correctly spelled sentence that doesn't say what you mean. In a similar way, a Fix-it will fix errors in your code, but the fix might not be what you meant to do.
+
+For example, on the last page, you used a Fix-it to turn a constant into a variable.
+
+You’ve already seen that you should only use a variable when the value absolutely needs to change over time. The Fix-it is trying to be helpful, but it could be suggesting that you make something mutable that you wanted to stay immutable.
+
+In the example on the last page, did the value of name really need to change? A better solution might have been to set the value of the constant to "John" in the first place:
+
+let name = "John"
+
+Always remember that Xcode is trying to give you a helpful suggestion, but it’s just a suggestion. Don’t accept a Fix-it without taking a moment to understand the change it will make.
+
+Previous  |  page 8 of 13  |  Next: Safer Code in a Varying World
+
+Safer Code in a Varying World
+
+Why bother with constants if you can just use variables? Aren't variables better because you can change them whenever you like?
+
+The answer is a firm no.
+
+Sometimes you'll write code that expects the world to be a certain way. Imagine you ask a friend what they'd like to drink, and then you start working really hard to deliver it.
+
+var friendBeverageChoice = "coffee"
+
+driveAcrossTown()
+buyACoffeeMaker()
+
+Depending how long you're gone, you have no way of knowing whether your friend will change their mind before you get back.
+
+friendBeverageChoice = "tea"
+
+findCoffeeGrinder()
+
+friendBeverageChoice = "water"
+friendBeverageChoice = "sparkling water"
+friendBeverageChoice = "plain water"
+
+findCoffeeBeans()
+driveHome()
+setUpCoffeeGrinder()
+
+friendBeverageChoice = "nothing 😴"
+grindBeans()
+makeFriendDrinkCoffee()
+
+You might knock on your friend's door at 3 a.m. and expect them to wake up to drink your coffee with tremendous gratitude. But probably your friend will be annoyed at the disturbance, and you’ll be disappointed. Your friend’s desire for coffee is variable, so you can't behave in a way that expects it to be constant.
+
+Variables in code have exactly the same problem. If you only check their value once and then do a lot of work that depends on the value staying the same, you might end up doing work that's unnecessary or just plain wrong.
+
+Change the friendBeverageChoice from a var to a let constant, and notice the errors that now pepper the page. You can make this code correct in one of two ways.
+You could keep the friendBeverageChoice as a let constant, and delete all the lines with assignment that change it.
+Or you could change the friendBeverageChoice to a var variable, and delete all the lines that you can’t be absolutely certain you still need, like setUpCoffeeGrinder().
+The second option doesn't leave you with a very useful program, does it?
+
+How can you mix together constants and variables?
+
+Previous  |  page 9 of 13  |  Next: Safer Code in an Unexpected World
+
+/ Keep friendBeverageChoice as a constant
+let friendBeverageChoice = "coffee"
+
+findCoffeeBeans()
+driveHome()
+setupCoffeeGrinder()
+grindBeans()
+makeFriendDrinkCoffee()
+
+// Keep friendBeverageChoice as a variable
+var friendBeverageChoice = "coffee"
+
+// Change the beverage choice
+friendBeverageChoice = "tea"
+findCoffeeBeans()
+driveHome()
+setupCoffeeGrinder()
+
+friendBeverageChoice = "nothing"
+grindBeans()
+makeFriendDrinkCoffee()
+
+In this option, friendBeverageChoice is kept as a var variable, allowing the value to be changed based on different conditions. The program continues the full drink preparation logic but updates the friend’s drink preference according to the different choices.
+
+Safer Code in an Unexpected World
+
+Changing the value of something should only be done deliberately. When writing a program, it should be clear what each piece of code is expected to do. If you make everything a variable, you or someone else might change a value, whether accidentally or on purpose. In any case, the change can cause a problem somewhere down the line.
+
+Consider this program for recording and calculating scores in a game:
+
+// Scores for each target
+var scoreForGreen = 5
+var scoreForRed = 10
+var scoreForGold = 20
+
+// Player scores
+var scoreForGary = 0
+var scoreForRob = 0
+
+// Game events here
+scoreForGary += scoreForRed
+scoreForGary += scoreForGreen
+scoreForGary += scoreForGold
+
+scoreForRob += scoreForRed
+scoreForRed += scoreForGreen
+scoreForRob += scoreForGold
+
+scoreForGary += scoreForRed
+scoreForGary += scoreForGreen
+scoreForGary += scoreForGold
+
+scoreForRob += scoreForRed
+scoreForRob += scoreForGreen
+scoreForRob += scoreForGold
+
+scoreForRob
+scoreForGary
+
+The program above has a problem. Each player hit the same targets, but Rob has fewer points than Gary at the end of the game. Can you find the problem?
+ Hint: At the start of the program, try defining the target scores with let instead of var.
+
+Previous  |  page 10 of 13  |  Next: Wrapping Up
+
+// Scores for each target
+let scoreForGreen = 5
+let scoreForRed = 10
+let scoreForGold = 20
+
+var scoreForGary = 0
+var scoreForRob = 0
+
+// Game events occur
+scoreForGary += scoreForRed
+scoreForGary += scoreForGreen
+scoreForGary += scoreForGold
+
+scoreForRob += scoreForRed
+scoreForRob += scoreForGreen
+scoreForRob += scoreForGold
+
+scoreForGary += scoreForRed
+scoreForGary += scoreForGreen
+scoreForGary += scoreForGold
+
+scoreForRob += scoreForRed
+scoreForRob += scoreForGreen
+scoreForRob += scoreForGold
+
+
+Wrapping Up
+
+You’ve learned some very important concepts in this playground:
+
+Values declared with let are constants, and can’t be changed once a value is assigned. These values are called immutable.
+Values declared with var are variables, and can be assigned new values over time. These values are called mutable.
+A mutable value can be used as part of an assignment statement to itself: score = score + 10.
+Compound assignment operators allow mutable values to be updated: score += 10.
+Using constants and variables in the correct places helps make your code safer and easier to understand.
+
+Practice what you’ve learned with the upcoming exercises.
+
+Previous  |  page 11 of 13  |  Next: Exercise: Making a Shopping List
+
+Exercise: Making a Shopping List
+
+The constants below represent some of the things you might want to add to a shopping list:
+
+let eggs = "Eggs"
+let milk = "Milk"
+let cheese = "Cheese"
+let bread = "Bread"
+let rice = "Rice"
+let newLine = "\n"
+
+Create a string variable with an initial value of "". Add each constant item above to the list, one at a time. Add a newLine between items. Remember you can join two strings using the + operator.
+
+Previous  |  page 12 of 13  |  Next: Exercise: 501
+
+// Constants for the shopping list items
+let eggs = "Eggs"
+let milk = "Milk"
+let cheese = "Cheese"
+let bread = "Bread"
+let rice = "Rice"
+let newLine = "\n"
+
+// Initialize an empty string for the shopping list
+var shoppingList = ""
+
+// Add each item to the shopping list, separated by a new line
+shoppingList += eggs + newLine
+shoppingList += milk + newLine
+shoppingList += cheese + newLine
+shoppingList += bread + newLine
+shoppingList += rice + newLine
+
+// Print the final shopping list
+print(shoppingList)
+
+Exercise: 501
+
+You may know the popular darts game called 501. Players start with a score of 501 and work down to zero. Here are the rules:
+
+Each player plays a “round” where they throw three darts at a board.
+Each throw can score between 1 and 20 points, which may be doubled or tripled depending where it hits on the board.
+It's also possible to score 25 for the outer bulls-eye or 50 for the inner bulls-eye.
+
+House rule: At the end of three rounds, whoever is closest to zero without going below zero is the winner.
+
+Imagine you’re a game shark. You want to fool people into thinking you’re terrible at this game, but then come back and beat them in one swoop at the end. Model your game progress using variables.
+ 
+ Start with a variable set to 501 to hold your overall score.
+ Create another variable set to 0 to hold the score for each round.
+ For each throw, update the value of the round score by adding points from the throw.
+ At the end of each round, calculate your current overall score by subtracting the round score from it. Assign the new value to your overall score, and reset the round score to zero.
+ 
+ How slowly can you “improve” your performance without arousing suspicion? 
+ 
+ After each round, print some statements that your opponents might make. If you can, use the value of your current score in their statements.
+
+Copyright © 2023 Apple Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Previous  |  page 13 of 13
+
+// Initialize the overall score and round score
+var overallScore = 501
+var roundScore = 0
+
+// Function to simulate throwing a dart
+func throwDart() -> Int {
+    // Return a random score between 1 and 20, or the bullseye scores
+    let possibleScores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 50]
+    return possibleScores.randomElement()!
+}
+
+// Function to simulate a round (3 dart throws)
+func playRound() {
+    // Reset the round score
+    roundScore = 0
+    
+    // Simulate three dart throws
+    for _ in 1...3 {
+        let dartScore = throwDart()
+        roundScore += dartScore
+        print("You hit \(dartScore) points with this throw.")
+    }
+    
+    // Subtract the round score from the overall score
+    overallScore -= roundScore
+    
+    // Ensure the overall score doesn't drop below zero
+    if overallScore < 0 {
+        overallScore = 0
+    }
+    
+    print("Your total score after this round is \(overallScore).")
+}
+
+// Function to simulate multiple rounds and print progress
+func gameLoop() {
+    for round in 1...3 {
+        print("\nRound \(round):")
+        playRound()
+        
+        // Print some statements based on the current score
+        if overallScore > 400 {
+            print("Opponent: 'You're not doing so well... keep trying!'")
+        } else if overallScore > 200 {
+            print("Opponent: 'You're improving, but you're still far behind!'")
+        } else if overallScore > 100 {
+            print("Opponent: 'Oh no, you're catching up!'")
+        } else {
+            print("Opponent: 'How did you get this good so fast?!'")
+        }
+    }
+    
+    // Final result
+    if overallScore == 0 {
+        print("\nCongratulations! You hit exactly zero and won the game!")
+    } else {
+        print("\nGame over! Your final score is \(overallScore).")
+    }
+}
+
+// Start the game simulation
+gameLoop()
